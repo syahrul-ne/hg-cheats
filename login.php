@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - HgCheats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #1e293b);
+    }
+    .text-gradient-login {
+      background: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-[#0f172a] to-[#1e293b] animate-fadeIn">
+
+  <div class="bg-[#1e293b] rounded-xl p-8 w-full max-w-sm shadow-2xl border border-slate-700/50 transform transition-all duration-300 hover:scale-[1.01] animate-slideDown">
+    
+    <!-- BR logo -->
+    <div class="flex justify-center mb-8">
+      <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg animate-bounce-custom">
+        HG
+      </div>
+    </div>
+
+    <!-- Título -->
+    <h2 class="text-center text-white text-3xl font-extrabold mb-3 text-gradient-login animate-fadeInUp">Bem-vindo de volta</h2>
+    <p class="text-center text-slate-400 text-base mb-8 animate-fadeInUp delay-100">Faça login para acessar o painel HgCheats</p>
+
+    
+    <!-- Formulário -->
+    <form method="POST" action="verificar_login.php" class="space-y-6">
+
+      <!-- Campo Usuário -->
+      <div class="animate-fadeInUp delay-300">
+        <label for="username" class="text-sm text-slate-300 block mb-2 font-medium"><i class="fas fa-user mr-2"></i>Usuário</label>
+        <input type="text" id="username" name="username" required placeholder="Digite seu usuário"
+          class="w-full px-4 py-3 rounded-lg bg-slate-800 text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200" />
+      </div>
+
+      <!-- Campo Senha -->
+      <div class="relative animate-fadeInUp delay-400">
+        <label for="password" class="text-sm text-slate-300 block mb-2 font-medium"><i class="fas fa-lock mr-2"></i>Senha</label>
+        <input type="password" id="password" name="password" required placeholder="Digite sua senha"
+          class="w-full px-4 py-3 rounded-lg bg-slate-800 text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 pr-10" />
+        <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 mt-7">
+          <i class="fas fa-eye text-slate-400 hover:text-slate-300 cursor-pointer" id="togglePassword"></i>
+        </div>
+      </div>
+
+      <!-- Botão Entrar -->
+        <button type="submit"
+        class="w-full py-3 mt-6 bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-700 hover:to-blue-600 transition-all duration-300 rounded-lg text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 animate-fadeInUp delay-500 flex items-center justify-center">
+        <i class="fas fa-arrow-right mr-2"></i>Entrar no Painel
+      </button>
+    </form>
+    
+    <!-- Texto de segurança -->
+    <p class="text-center text-slate-500 text-sm mt-6 animate-fadeInUp delay-600">Sistema seguro HgCheats</p>
+  </div>
+
+<script>
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f288f319f18e490b9a89e8a7805b0616","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
